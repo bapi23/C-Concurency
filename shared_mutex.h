@@ -93,38 +93,38 @@ void readerFunc2()
 
 void shared_mutex_test()
 {
-    {
-        using namespace std::literals;
-        QElapsedTimer timer;
-        timer.start();
-        boost::thread writer(writerFunc);
-        boost::thread reader1(readerFunc);
-        boost::thread reader2(readerFunc);
-        boost::thread reader3(readerFunc);
+//    {
+//        using namespace std::literals;
+//        QElapsedTimer timer;
+//        timer.start();
+//        boost::thread writer(writerFunc);
+//        boost::thread reader1(readerFunc);
+//        boost::thread reader2(readerFunc);
+//        boost::thread reader3(readerFunc);
 
-        writer.join();
-        reader1.join();
-        reader2.join();
-        reader3.join();
-        int elapsed = timer.elapsed();
+//        writer.join();
+//        reader1.join();
+//        reader2.join();
+//        reader3.join();
+//        int elapsed = timer.elapsed();
 
-        std::cout << "Elapsed time = " << elapsed;
-    }
-    {
-        using namespace std::literals;
-        QElapsedTimer timer;
-        timer.start();
-        boost::thread writer(writerFunc2);
-        boost::thread reader1(readerFunc2);
-        boost::thread reader2(readerFunc2);
-        boost::thread reader3(readerFunc2);
+//        std::cout << "Elapsed time = " << elapsed;
+//    }
+//    {
+//        using namespace std::literals;
+//        QElapsedTimer timer;
+//        timer.start();
+//        boost::thread writer(writerFunc2);
+//        boost::thread reader1(readerFunc2);
+//        boost::thread reader2(readerFunc2);
+//        boost::thread reader3(readerFunc2);
 
-        writer.join();
-        reader1.join();
-        reader2.join();
-        reader3.join();
-        int elapsed = timer.elapsed();
+//        writer.join();
+//        reader1.join();
+//        reader2.join();
+//        reader3.join();
+//        int elapsed = timer.elapsed();
 
-        std::cout << "Elapsed time = " << elapsed;
-    }
+//        std::cout << "Elapsed time = " << elapsed;
+//    }
 }

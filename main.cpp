@@ -10,6 +10,11 @@
 #include "unique_lock.h"
 #include "call_once.h"
 #include "shared_mutex.h"
+#include "threadsafe_queue.h"
+#include "packaged_task.h"
+#include "promise.h"
+#include "chrono.h"
+#include "async_exception.h"
 
 int main()
 {
@@ -31,6 +36,16 @@ int main()
     call_once_test();
     std::cout << "--------------- shared_mutex -----------------\n";
     shared_mutex_test();
+    std::cout << "--------------- packaged_task -----------------\n";
+    packaged_task();
+    std::cout << "--------------- promise -----------------\n";
+    promise();
+    std::cout << "--------------- shared_future -----------------\n";
+    shared_future();
+    std::cout << "--------------- chrono -----------------\n";
+    chrono();
+    std::cout << "--------------- async_exception -----------------\n";
+    async_exception();
 
     return 0;
 }
