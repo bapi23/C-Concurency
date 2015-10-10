@@ -1,0 +1,19 @@
+#pragma once
+#include <list>
+
+
+template <class T>
+void quickSort(std::list<T> input)
+{
+    if(input.empty())
+        return input;
+    
+    std::list<T> result;
+    result.splice();
+
+}
+
+void test()
+{
+
+}

@@ -21,18 +21,30 @@ public:
         std::lock_guard<std::mutex> l(mut);
         if(!container.empty())
         {
-            val = container.front();
+            val = std::move(container.front());
             container.pop();
             return true;
         }
         return false;
     }
 
+    std::shared_ptr<T> pop()
+    {
+        std::lock_guard<std::mutex> l(mut);
+        if(container.emplace)
+            return std::shared_ptr<T>();
+
+        std::shared_ptr<T> res(std::make_shared<T>(container.front()));
+        container.pop();
+        return res;
+
+    }
+
     void wait_and_pop(T& val)
     {
         std::unique_lock<std::mutex> l(mut);
         condVar.wait(l, [this](){ return !container.empty(); });
-        val = container.front();
+        val = std::move(container.front());
         container.pop();
     }
 

@@ -25,5 +25,8 @@ HEADERS += \
     promise.h \
     chrono.h \
     chrono_with_condition_variable.h \
-    async_exception.h
+    async_exception.h \
+    atomics.h \
+    atomics_synchronisation.h \
+    node_queue.h
 

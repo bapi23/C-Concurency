@@ -15,6 +15,10 @@
 #include "promise.h"
 #include "chrono.h"
 #include "async_exception.h"
+#include "chrono_with_condition_variable.h"
+#include "atomics.h"
+#include "atomics_synchronisation.h"
+#include "node_queue.h"
 
 int main()
 {
@@ -46,7 +50,16 @@ int main()
     chrono();
     std::cout << "--------------- async_exception -----------------\n";
     async_exception();
+    std::cout << "--------------- chrono_with_condition_variable -----------------\n";
+    chrono_with_condition_variable();
+    std::cout << "--------------- atomics -----------------\n";
+    atomics();
 
+    std::cout << "--------------- atomics synchronisation-----------------\n";
+    atomics_synchronisation();
+
+    std::cout << "--------------- node_queue-----------------\n";
+    test_node_queue();
     return 0;
 }
 
