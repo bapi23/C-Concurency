@@ -4,7 +4,6 @@
 #include <boost/thread/mutex.hpp>
 #include <boost/thread.hpp>
 #include <thread>
-#include <QElapsedTimer>
 #include <stdlib.h>
 
 template<typename Data,

@@ -1,7 +1,7 @@
 #pragma once
 #include <atomic>
 #include <thread>
-
+#include <cassert>
 
 
 std::atomic<int> x;
@@ -22,13 +22,13 @@ void t2()
 void t3()
 {
     x.load();
-    Q_ASSERT(x==1);
+    assert(x==1);
 }
 
 void t4()
 {
     y.load();
-    Q_ASSERT(y==1);
+    assert(y==1);
 }
 
 void z1()
@@ -93,6 +93,6 @@ void atomics_synchronisation()
 //        th2.join();
 //        th3.join();
 //        th4.join();
-//        Q_ASSERT(counter <= 1);
+//        assert(counter <= 1);
 //    }
 }
